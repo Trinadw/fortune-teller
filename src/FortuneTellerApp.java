@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class FortuneTellerApp {
 
 	public static void main(String[] args) {
+
 		Scanner input = new Scanner(System.in);
 		// Ask the user for the user’s first name.
 		System.out.println("What is your first name?");
@@ -26,7 +27,7 @@ public class FortuneTellerApp {
 		}
 
 		// Ask the user for the user’s birth month (as an 'int').
-		System.out.println("What is your birth month, as a number (1-12?");
+		System.out.println("What is your birth month, as a number (1-12)?");
 		int month = input.nextInt();
 
 		// The user's bank balance at retirement will be based on the user's
@@ -50,28 +51,32 @@ public class FortuneTellerApp {
 		System.out.println("What is your favorite ROYGBIV color? Enter \"Help\" to get a list of ROYGBIV colors.");
 		String color = input.next();
 		String transport = "";
-		
-		switch(color.toLowerCase()) {
-		case "help":
-			System.out.println("Red, Orange, Yellow, Green, Blue, Indigo and Violet. What if your favorite ROYGBIV color?");
+
+		do {
+			System.out.println(
+					"Red, Orange, Yellow, Green, Blue, Indigo and Violet. What if your favorite ROYGBIV color?");
+
 			color = input.next();
-		case "red":
-			transport = "car";
-		case "orange":
-			transport = "bike";
-		case "yellow":
-		transport = "train";
-		case "green":
-			transport = "trike";
-		case "blue":
-		transport = "plane";
-		case "indigo":
-			transport = "boat";
-		case "violet":
-			transport = "scooter";
-		}
-		
-		
+
+			switch (color.toLowerCase()) {
+
+			case "red":
+				transport = "car";
+			case "orange":
+				transport = "bike";
+			case "yellow":
+				transport = "train";
+			case "green":
+				transport = "trike";
+			case "blue":
+				transport = "plane";
+			case "indigo":
+				transport = "boat";
+			case "violet":
+				transport = "scooter";
+			}
+		} while (color.equalsIgnoreCase("help"));
+
 		// Ask the user for the user's number of siblings.
 
 		// The location of the user's vacation home will be based on how
@@ -93,12 +98,12 @@ public class FortuneTellerApp {
 		} else {
 			location = "Syria";
 		}
-	
+
 		System.out.println(nameFirst + " " + nameLast + " will retire in " + age + " with " + birth
 				+ " in the bank, a vacation home in " + location + " and travel by " + transport + ".");
-		
+
 		input.close();
-	
-		
+
 	}
+
 }
