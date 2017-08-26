@@ -52,30 +52,27 @@ public class FortuneTellerApp {
 		String color = input.next();
 		String transport = "";
 
-		do {
+		if (color.equalsIgnoreCase("help")) {
 			System.out.println(
-					"Red, Orange, Yellow, Green, Blue, Indigo and Violet. What if your favorite ROYGBIV color?");
-
+					"Red, Orange, Yellow, Green, Blue, Indigo and Violet. What is your favorite ROYGBIV color?");
 			color = input.next();
+		}
 
-			switch (color.toLowerCase()) {
-
-			case "red":
-				transport = "car";
-			case "orange":
-				transport = "bike";
-			case "yellow":
-				transport = "train";
-			case "green":
-				transport = "trike";
-			case "blue":
-				transport = "plane";
-			case "indigo":
-				transport = "boat";
-			case "violet":
-				transport = "scooter";
-			}
-		} while (color.equalsIgnoreCase("help"));
+		if (color.equalsIgnoreCase("red")) {
+			transport = "car";
+		} else if (color.equalsIgnoreCase("orange")) {
+			transport = "bike";
+		} else if (color.equalsIgnoreCase("yellow")) {
+			transport = "train";
+		} else if (color.equalsIgnoreCase("green")) {
+			transport = "trike";
+		} else if (color.equalsIgnoreCase("blue")) {
+			transport = "plane";
+		} else if (color.equalsIgnoreCase("indigo")) {
+			transport = "boat";
+		} else if (color.equalsIgnoreCase("violet")) {
+			transport = "scooter";
+		}
 
 		// Ask the user for the user's number of siblings.
 
